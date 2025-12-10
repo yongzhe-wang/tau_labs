@@ -2,6 +2,7 @@
 	"name": "tau-labs",
 	"type": "module",
 	"version": "6.11.0",
+	"description": "Tau Labs - Custom AI hardware and conversational AI integration. Based in Philadelphia, PA.",
 	"private": false,
 	"scripts": {
 		"postinstall": "npm rebuild sharp --force",
