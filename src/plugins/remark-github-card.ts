@@ -61,13 +61,13 @@ export const remarkGithubCard: Plugin<[], Root> = () => (tree) => {
 				},
 			]);
 
-			const hTitle = h("div", { class: "gh-title title" }, [
-				h("span", { class: "gh-avatar" }),
-				h("a", { class: "gh-text not-prose cactus-link", href: realUrl }, [
-					{ type: "text", value: `${repoParts[0]}/${repoParts[1]}` },
-				]),
-				h("span", { class: "gh-icon" }),
-			]);
+                const hTitle = h("div", { class: "gh-title title" }, [
+                	h("span", { class: "gh-avatar" }),
+                	h("a", { class: "gh-text not-prose tau-link", href: realUrl }, [
+                		{ type: "text", value: `${repoParts[0]}/${repoParts[1]}` },
+                	]),
+                	h("span", { class: "gh-icon" }),
+            ]);
 
 			const hChips = h("div", { class: "gh-chips" }, [
 				h("span", { class: "gh-stars" }, [{ type: "text", value: "00K" }]),
@@ -128,7 +128,7 @@ export const remarkGithubCard: Plugin<[], Root> = () => (tree) => {
 				h("div", { id: SimpleUUID, class: "github-card gh-simple gh-loading" }, [
 					h("div", { class: "gh-title title" }, [
 						h("span", { class: "gh-avatar" }),
-						h("a", { class: "gh-text not-prose cactus-link", href: realUrl }, [
+						h("a", { class: "gh-text not-prose tau-link", href: realUrl }, [
 							{ type: "text", value: repoParts[0] },
 						]),
 						h("span", { class: "gh-icon" }),

@@ -1,0 +1,87 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Case Studies" }}>
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+		<h1 class="mb-12 text-4xl font-bold">Case Studies</h1>
+		
+		<div class="space-y-12">
+			<div class="border-gray-800 overflow-hidden rounded-xl border bg-gray-900">
+				<div class="p-8 md:p-12">
+					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Toy</div>
+					<h2 class="mb-6 text-3xl font-bold">Voice-first educational toy</h2>
+					
+					<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+						<div>
+							<h3 class="mb-2 text-xl font-bold">Challenge</h3>
+							<p class="mb-6 text-gray-400">
+								A leading kids brand needed a screen-free interactive toy that could tell stories and answer questions, with strict privacy requirements and long battery life.
+							</p>
+							
+							<h3 class="mb-2 text-xl font-bold">Approach</h3>
+							<p class="mb-6 text-gray-400">
+								We designed a custom PCB based on a low-power ARM SoC. We implemented a hybrid voice stack: local wake word and command recognition for privacy, with secure cloud offload for complex queries.
+							</p>
+						</div>
+						<div>
+							<h3 class="mb-2 text-xl font-bold">Outcome</h3>
+							<ul class="space-y-2 text-gray-400">
+								<li><span class="text-white font-bold">30ms</span> on-device response latency</li>
+								<li><span class="text-white font-bold">12+ hours</span> active battery life</li>
+								<li><span class="text-white font-bold">COPPA</span> compliant architecture</li>
+							</ul>
+							
+							<div class="mt-8">
+								<h3 class="mb-2 font-bold">Stack</h3>
+								<div class="flex flex-wrap gap-2">
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Cortex-A35</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Custom Linux</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Whisper Tiny</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="border-gray-800 overflow-hidden rounded-xl border bg-gray-900">
+				<div class="p-8 md:p-12">
+					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Robotics</div>
+					<h2 class="mb-6 text-3xl font-bold">Autonomous Inspection Drone</h2>
+					
+					<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+						<div>
+							<h3 class="mb-2 text-xl font-bold">Challenge</h3>
+							<p class="mb-6 text-gray-400">
+								An industrial inspection company needed a drone payload capable of real-time defect detection on wind turbines, without relying on ground control.
+							</p>
+							
+							<h3 class="mb-2 text-xl font-bold">Approach</h3>
+							<p class="mb-6 text-gray-400">
+								We developed a custom carrier board for the NVIDIA Jetson Orin Nano, integrating 4 high-res cameras and a thermal sensor. We optimized their YOLOv8 model to run at 60FPS on the edge.
+							</p>
+						</div>
+						<div>
+							<h3 class="mb-2 text-xl font-bold">Outcome</h3>
+							<ul class="space-y-2 text-gray-400">
+								<li><span class="text-white font-bold">60 FPS</span> inference speed</li>
+								<li><span class="text-white font-bold">IP67</span> rated enclosure design</li>
+								<li><span class="text-white font-bold">50%</span> reduction in payload weight</li>
+							</ul>
+							
+							<div class="mt-8">
+								<h3 class="mb-2 font-bold">Stack</h3>
+								<div class="flex flex-wrap gap-2">
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Jetson Orin Nano</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">TensorRT</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">YOLOv8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</PageLayout>

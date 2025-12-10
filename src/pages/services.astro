@@ -1,0 +1,30 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+    title: "Services",
+    description: "Tau Labs services: hardware design, model optimization, edge deployment, and integration.",
+};
+---
+
+<PageLayout meta={meta}>
+    <h1 class="title mb-12">Services</h1>
+    <div class="prose prose-sm max-w-none">
+        <p>
+            We offer end-to-end services to help companies add conversational AI to their products.
+        </p>
+
+        <h3>Core services</h3>
+        <ul>
+            <li><strong>Hardware customization</strong> — board selection, thermal and enclosure design, and manufacturability consulting.</li>
+            <li><strong>Model optimization</strong> — quantization, pruning, and runtime tuning for low-latency inference.</li>
+            <li><strong>Edge deployment</strong> — containerized inference, on-device SDKs, and integration with local services.</li>
+            <li><strong>Data & privacy</strong> — secure pipelines, on-device data handling, and compliance guidance.</li>
+            <li><strong>Prototyping & support</strong> — rapid prototypes, pilot programs, and long-term maintenance.</li>
+        </ul>
+
+        <p>
+            Want a tailored quote? <a class="text-accent hover:underline" href="/contact/">Contact us</a> and we'll arrange a discovery workshop.
+        </p>
+    </div>
+</PageLayout>

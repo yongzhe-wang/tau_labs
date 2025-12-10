@@ -1,0 +1,59 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Technology" }}>
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+		<h1 class="mb-6 text-4xl font-bold">Built on modern embedded AI stacks</h1>
+		<p class="mb-12 text-xl text-gray-400">
+			We select the right tools for the job, balancing performance, cost, and power.
+		</p>
+
+		<div class="space-y-20">
+			<section>
+				<h2 class="mb-8 text-3xl font-bold">On-device AI & Models</h2>
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">Speech Processing</h3>
+						<p class="text-gray-400">Whisper, Kaldi, and custom wake word engines optimized for noisy environments.</p>
+					</div>
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">Language Models</h3>
+						<p class="text-gray-400">Llama 2, Mistral, and Phi-2 quantized for local execution on edge devices.</p>
+					</div>
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">Computer Vision</h3>
+						<p class="text-gray-400">YOLO, MobileNet, and custom object detection models for real-time perception.</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="mb-8 text-3xl font-bold">Hardware & Accelerators</h2>
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">NVIDIA Jetson</h3>
+						<p class="text-gray-400">Orin Nano and AGX for high-performance robotics and edge AI.</p>
+					</div>
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">Qualcomm / NXP</h3>
+						<p class="text-gray-400">Power-efficient SoCs for consumer devices and wearables.</p>
+					</div>
+					<div class="bg-gray-800/50 rounded-xl p-6">
+						<h3 class="mb-4 text-xl font-bold">Microcontrollers</h3>
+						<p class="text-gray-400">Cortex-M and RISC-V MCUs for ultra-low-power keyword spotting.</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="mb-8 text-3xl font-bold">Security & Privacy</h2>
+				<div class="bg-gray-800/50 rounded-xl p-8">
+					<p class="text-lg text-gray-300">
+						Security is paramount, especially for connected toys and voice devices. We implement secure boot, encrypted storage, and local processing to minimize data exposure. Our designs are COPPA and GDPR compliant by default.
+					</p>
+				</div>
+			</section>
+		</div>
+	</section>
+</PageLayout>

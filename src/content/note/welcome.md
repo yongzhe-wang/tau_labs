@@ -1,9 +1,9 @@
 ---
-title: Hello, Welcome
-description: An introduction to using the note feature in Astro Cactus
-publishDate: "2024-10-14T11:23:00Z"
+title: Welcome to Tau Labs
+description: Introductory note about Tau Labs and what we offer
+publishDate: "2025-12-09T12:00:00Z"
 ---
 
-Hi, Hello. This is an example note feature included with Astro Cactus.
+Welcome to the Tau Labs site. We build custom AI hardware and deliver conversational AI integrations for small and medium businesses.
 
-They're for shorter, concise "post's" that you'd like to share, they generally don't include headings, but hey, that's entirely up to you.
+This note introduces our mission and points you to more detailed case studies and services pages.

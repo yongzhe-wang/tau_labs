@@ -2,35 +2,50 @@
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
-	description: "I'm a starter theme for Astro.build",
+	description: "About Tau Labs — custom AI hardware and conversational AI integration for SMBs.",
 	title: "About",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-12">About</h1>
-	<div class="prose prose-sm prose-cactus max-w-none">
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc" role="list">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
-		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				rel="noreferrer"
-				target="_blank">repo</a
-			> if you like me!
-		</p>
-	</div>
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+		<h1 class="mb-12 text-4xl font-bold">About Tau Labs</h1>
+		
+		<div class="mb-20">
+			<h2 class="mb-6 text-2xl font-bold">Our Mission</h2>
+			<p class="text-xl text-gray-400">
+				To empower product teams to build intelligent, conversational devices that feel alive, without getting bogged down by the complexities of embedded AI and hardware design.
+			</p>
+		</div>
+
+		<div class="mb-20">
+			<h2 class="mb-6 text-2xl font-bold">Our Story</h2>
+			<div class="prose prose-invert max-w-none text-gray-400">
+				<p>
+					We started Tau Labs because we saw a gap in the market. While large tech companies were shipping incredible voice-enabled devices, smaller product teams struggled to integrate similar capabilities. The hardware was too complex, the models too large, and the integration too fragile.
+				</p>
+				<p>
+					We believe that conversational AI shouldn't be limited to smart speakers and phones. It belongs in toys, tools, appliances, and robots. We bring the expertise in custom silicon, edge AI, and firmware to make that a reality for teams of all sizes.
+				</p>
+			</div>
+		</div>
+
+		<div class="mb-20">
+			<h2 class="mb-8 text-2xl font-bold">Our Values</h2>
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+				<div class="bg-gray-800/50 rounded-xl p-6">
+					<h3 class="mb-2 text-xl font-bold">Privacy First</h3>
+					<p class="text-gray-400">We prioritize on-device processing to keep user data safe and secure.</p>
+				</div>
+				<div class="bg-gray-800/50 rounded-xl p-6">
+					<h3 class="mb-2 text-xl font-bold">Craftsmanship</h3>
+					<p class="text-gray-400">We care about the details, from PCB layout to the feel of the conversation.</p>
+				</div>
+				<div class="bg-gray-800/50 rounded-xl p-6">
+					<h3 class="mb-2 text-xl font-bold">Pragmatism</h3>
+					<p class="text-gray-400">We build solutions that ship, balancing innovation with reliability and cost.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </PageLayout>

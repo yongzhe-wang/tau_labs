@@ -1,0 +1,71 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Solutions" }}>
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+		<h1 class="mb-6 text-4xl font-bold">Solutions for intelligent devices and conversational toys</h1>
+		<p class="mb-12 text-xl text-gray-400">
+			We provide end-to-end hardware and AI services to bring your product to life.
+		</p>
+
+		<div class="grid grid-cols-1 gap-12">
+			{[
+				{
+					title: "Custom AI Hardware Design",
+					desc: "We design carrier boards and compute modules tailored to your form factor and performance needs.",
+					deliverables: ["Schematics & PCB Layout", "Prototype Manufacturing", "Signal Integrity Analysis"],
+				},
+				{
+					title: "Conversational Toy Platform",
+					desc: "A turnkey solution for interactive toys, including voice activity detection, wake word, and dialogue management.",
+					deliverables: ["Voice Stack Integration", "Cloud/Edge Hybrid Architecture", "Companion App API"],
+				},
+				{
+					title: "Model & Firmware Optimization",
+					desc: "Squeeze maximum performance out of low-power chips with quantization and runtime optimization.",
+					deliverables: ["INT8/FP16 Quantization", "Custom Kernel Implementation", "Power Profiling"],
+				},
+				{
+					title: "Prototype Kits & Dev Boards",
+					desc: "Get started quickly with our reference designs and development kits.",
+					deliverables: ["Tau-1 Dev Kit", "Documentation & SDK", "Support Channel"],
+				},
+				{
+					title: "Manufacturing & Supply Chain",
+					desc: "We handle production directly with our factory partners to ensure competitive pricing and quality control.",
+					deliverables: ["Sourcing & BOM Management", "Factory Liaison", "Quality Assurance (QA)"],
+				},
+			].map((item) => (
+				<div class="border-gray-800 rounded-xl border bg-gray-900 p-8">
+					<h2 class="mb-4 text-2xl font-bold">{item.title}</h2>
+					<p class="mb-6 text-gray-400">{item.desc}</p>
+					<h3 class="mb-2 font-bold text-accent">Deliverables:</h3>
+					<ul class="list-disc list-inside text-gray-400">
+						{item.deliverables.map((d) => (
+							<li>{d}</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-20 border-t border-gray-800 pt-20">
+			<h2 class="mb-12 text-3xl font-bold">Frequently Asked Questions</h2>
+			<div class="space-y-8">
+				<div>
+					<h3 class="mb-2 text-xl font-bold">Minimum engagement size?</h3>
+					<p class="text-gray-400">We typically work with teams ready to prototype or scale. Contact us to discuss your specific needs.</p>
+				</div>
+				<div>
+					<h3 class="mb-2 text-xl font-bold">Lead time?</h3>
+					<p class="text-gray-400">Standard design cycles range from 4-12 weeks depending on complexity.</p>
+				</div>
+				<div>
+					<h3 class="mb-2 text-xl font-bold">Do you handle manufacturing?</h3>
+					<p class="text-gray-400">We handle prototyping and pilot runs, and partner with trusted CMs for mass production.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</PageLayout>

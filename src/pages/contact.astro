@@ -1,0 +1,65 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+    title: "Contact",
+    description: "Get in touch with Tau Labs for AI hardware and conversational AI integration services.",
+};
+---
+
+<PageLayout meta={meta}>
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+        <div class="grid grid-cols-1 gap-20 lg:grid-cols-2">
+            <div>
+                <h1 class="mb-6 text-4xl font-bold">Start a project</h1>
+                <p class="mb-12 text-xl text-gray-400">
+                    Tell us about your product vision and constraints. We'll help you navigate the hardware and AI landscape.
+                </p>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="mb-2 text-lg font-bold">Email</h3>
+                        <a href="mailto:hello@tau-labs.ai" class="text-accent hover:underline text-lg">hello@tau-labs.ai</a>
+                    </div>
+                    <div>
+                        <h3 class="mb-2 text-lg font-bold">Location</h3>
+                        <p class="text-gray-400">San Francisco, CA & Remote</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                <h2 class="mb-6 text-2xl font-bold">What happens next?</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold mb-1">Initial Review</h3>
+                            <p class="text-sm text-gray-400">We review your requirements to ensure we're a good fit.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">2</div>
+                        <div>
+                            <h3 class="font-bold mb-1">Discovery Call</h3>
+                            <p class="text-sm text-gray-400">A 30-minute chat to discuss technical constraints and goals.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">3</div>
+                        <div>
+                            <h3 class="font-bold mb-1">Proposal</h3>
+                            <p class="text-sm text-gray-400">We send a preliminary architecture plan and engagement model.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-800">
+                    <p class="text-sm text-gray-500">
+                        We respect your IP. All conversations are confidential. NDAs available upon request.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

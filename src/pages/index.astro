@@ -1,80 +1,265 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
-import SocialList from "@/components/SocialList.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 
-// Posts
-const MAX_POSTS = 10;
+// Latest Posts for Section 8
+const MAX_POSTS = 3;
 const allPosts = await getAllPosts();
-const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
-const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
-
-// Pinned Posts, set to a max of 3;
-const MAX_PINNED_POSTS = 3;
-const pinnedPosts = allPostsByDate.filter((p) => p.data.pinned).slice(0, MAX_PINNED_POSTS);
-
-// Notes
-const MAX_NOTES = 5;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes
-	.sort(collectionDateSort)
-	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+const latestPosts = allPosts.sort(collectionDateSort).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-12">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-			If you want to know more about how you can customise me, add more posts, and make it your own,
-			click on the GitHub icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
-	</section>
-	{
-		pinnedPosts.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title mb-6 text-xl">Pinned Posts</h2>
-				<ul class="space-y-4" role="list">
-					{pinnedPosts.map((p) => (
-						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-							<PostPreview post={p} />
-						</li>
-					))}
+	<!-- Section 1: Hero -->
+	<section class="mx-auto max-w-7xl px-4 sm:px-8 grid grid-cols-1 items-center gap-12 py-20 sm:py-32 lg:grid-cols-2">
+		<div>
+			<h1 class="mb-6 text-5xl font-bold leading-tight sm:text-6xl">
+				Custom AI hardware & conversational devices for modern products.
+			</h1>
+			<p class="mb-8 text-xl text-gray-400">
+				We co-design boards, firmware, and on-device models so brands can ship intelligent devices and
+				conversational AI toys that feel alive.
+			</p>
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="/contact"
+					class="bg-accent text-bgColor hover:opacity-90 rounded-lg px-6 py-3 text-lg font-bold transition-opacity"
+				>
+					Talk to an Engineer
+				</a>
+				<a
+					href="/solutions"
+					class="border-accent text-accent hover:bg-accent hover:text-bgColor rounded-lg border px-6 py-3 text-lg font-bold transition-colors"
+				>
+					View Solutions
+				</a>
+			</div>
+		</div>
+		<div class="flex aspect-video items-center justify-center rounded-xl bg-gray-800 p-8">
+			<!-- Placeholder for product render -->
+			<div class="text-center">
+				<p class="mb-2 font-mono text-2xl">Tau-1 Dev Kit</p>
+				<ul class="space-y-1 text-sm text-gray-400">
+					<li>Quad-core ARM Cortex-A55</li>
+					<li>2.3 TOPS NPU</li>
+					<li>Dual Mic Array</li>
+					<li>Wi-Fi 6 + BT 5.2</li>
 				</ul>
-			</section>
-		)
-	}
-	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
-		<ul class="space-y-4" role="list">
-			{
-				latestPosts.map((p) => (
-					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
+			</div>
+		</div>
 	</section>
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title text-accent mb-6 text-xl">
-					<a href="/notes/">Notes</a>
-				</h2>
-				<ul class="space-y-6" role="list">
-					{latestNotes.map((note) => (
-						<li>
-							<Note note={note} as="h3" isPreview />
+
+	<!-- Section 2: Who & What -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="mb-12 text-center text-3xl font-bold">Built for teams shipping intelligent devices</h2>
+			<div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+				<div class="bg-gray-800/50 border-gray-700 rounded-xl border p-6">
+					<h3 class="mb-2 text-xl font-bold">Robotics & Automation</h3>
+					<p class="text-gray-400">Low-latency perception and control systems.</p>
+				</div>
+				<div class="bg-gray-800/50 border-gray-700 rounded-xl border p-6">
+					<h3 class="mb-2 text-xl font-bold">Consumer Devices & Toys</h3>
+					<p class="text-gray-400">Engaging, voice-first interactive experiences.</p>
+				</div>
+				<div class="bg-gray-800/50 border-gray-700 rounded-xl border p-6">
+					<h3 class="mb-2 text-xl font-bold">Industrial Systems</h3>
+					<p class="text-gray-400">Ruggedized edge AI for predictive maintenance.</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{[
+					"Custom AI hardware design",
+					"Conversational toy platform",
+					"Model optimization for edge",
+					"Firmware & integration support",
+				].map((item) => (
+					<div class="border-gray-800 rounded-lg border bg-gray-900 p-4 text-center font-medium">
+						{item}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 3: Value Propositions -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="mb-12 text-3xl font-bold">Why teams work with Tau Labs</h2>
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+				{[
+					{
+						title: "End-to-end co-design",
+						desc: "From chip selection and board layout to model optimization and QA.",
+					},
+					{
+						title: "Predictable performance",
+						desc: "Latency, power, and BOM targets defined upfront and tracked.",
+					},
+					{
+					title: "Conversation-first",
+					desc: "Built from day one for on-device speech and dialogue.",
+				},
+				{
+					title: "Factory-Direct Manufacturing",
+					desc: "We produce directly with trusted factories at competitive prices, from prototype to scale.",
+				},
+			].map((item) => (
+					<div>
+						<h3 class="text-accent mb-3 text-xl font-bold">{item.title}</h3>
+						<p class="text-gray-400">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 4: Case Highlights -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="mb-12 text-3xl font-bold">Case Highlights</h2>
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+				<div
+					class="hover:border-accent border-gray-700 group relative overflow-hidden rounded-xl border bg-gray-800 p-8 transition-colors"
+				>
+					<div class="text-accent mb-2 text-xs font-bold tracking-wider uppercase">Toy</div>
+					<h3 class="mb-4 text-2xl font-bold">Voice-first educational toy</h3>
+					<p class="mb-6 text-gray-400">
+						On-device dialogue and cloud-sync stories for a leading kids brand.
+					</p>
+					<div class="mb-6 flex gap-4 font-mono text-sm text-gray-300">
+						<span>30ms latency</span>
+						<span>12h battery</span>
+					</div>
+					<a href="/case-studies" class="text-accent font-bold hover:underline">View case study &rarr;</a>
+				</div>
+				<div
+					class="hover:border-accent border-gray-700 group relative overflow-hidden rounded-xl border bg-gray-800 p-8 transition-colors"
+				>
+					<div class="text-accent mb-2 text-xs font-bold tracking-wider uppercase">Robotics</div>
+					<h3 class="mb-4 text-2xl font-bold">Autonomous Inspection Drone</h3>
+					<p class="mb-6 text-gray-400">
+						Custom carrier board with dual NPU for real-time defect detection.
+					</p>
+					<div class="mb-6 flex gap-4 font-mono text-sm text-gray-300">
+						<span>4 cameras</span>
+						<span>IP67 rated</span>
+					</div>
+					<a href="/case-studies" class="text-accent font-bold hover:underline">View case study &rarr;</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 5: Process -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="mb-12 text-center text-3xl font-bold">From idea to shipped device</h2>
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+				{[
+					{ step: "01", title: "Discovery", desc: "Requirements & Feasibility" },
+					{ step: "02", title: "Architecture", desc: "Prototyping & Selection" },
+					{ step: "03", title: "Validation", desc: "Pilot Runs & Testing" },
+					{ step: "04", title: "Production", desc: "Support & Handoff" },
+				].map((item) => (
+					<div class="border-l-2 border-gray-700 p-6">
+						<div class="mb-2 text-4xl font-bold text-gray-800">{item.step}</div>
+						<h3 class="mb-1 text-xl font-bold">{item.title}</h3>
+						<p class="text-sm text-gray-400">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 6: Technology -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<div class="flex flex-col items-start justify-between gap-12 md:flex-row">
+				<div class="md:w-1/3">
+					<h2 class="mb-4 text-3xl font-bold">What we work with</h2>
+					<p class="mb-6 text-gray-400">We leverage the best-in-class tools for embedded AI.</p>
+					<a href="/technology" class="text-accent font-bold hover:underline"
+						>Explore our technology &rarr;</a
+					>
+				</div>
+				<div class="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 md:w-2/3">
+					<div>
+						<h3 class="mb-4 text-lg font-bold">AI & Models</h3>
+						<ul class="space-y-2 text-gray-400">
+							<li>ASR / TTS</li>
+							<li>Small LLMs</li>
+							<li>Vision Models</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mb-4 text-lg font-bold">Hardware</h3>
+						<ul class="space-y-2 text-gray-400">
+							<li>NVIDIA Jetson</li>
+							<li>Qualcomm</li>
+							<li>Custom NPUs</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mb-4 text-lg font-bold">Tooling</h3>
+						<ul class="space-y-2 text-gray-400">
+							<li>PyTorch / ONNX</li>
+							<li>TensorRT</li>
+							<li>Embedded Linux</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 8: Blog/Resources -->
+	<section class="border-t border-gray-800 py-20">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<div class="mb-12 flex items-end justify-between">
+				<h2 class="text-3xl font-bold">Insights & notes</h2>
+				<a href="/posts" class="text-accent hover:underline">Browse all articles &rarr;</a>
+			</div>
+			<ul class="space-y-8">
+				{
+					latestPosts.map((p) => (
+						<li class="grid items-baseline gap-4 sm:grid-cols-[auto_1fr]">
+							<span class="min-w-[120px] font-mono text-sm text-gray-500">
+								{p.data.publishDate.toLocaleDateString("en-US", {
+									year: "numeric",
+									month: "short",
+									day: "numeric",
+								})}
+							</span>
+							<div>
+								<a
+									href={`/posts/${p.slug}/`}
+									class="hover:text-accent text-xl font-bold transition-colors"
+								>
+									{p.data.title}
+								</a>
+								<p class="mt-2 line-clamp-2 text-gray-400">{p.data.description}</p>
+							</div>
 						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
+					))
+				}
+			</ul>
+		</div>
+	</section>
+
+	<!-- Section 9: Bottom CTA -->
+	<section class="mx-auto max-w-7xl px-4 sm:px-8">
+		<div class="bg-gray-800/30 my-20 rounded-3xl py-32 text-center">
+			<h2 class="mb-6 text-4xl font-bold">Have a device or conversational toy in mind?</h2>
+			<p class="mx-auto mb-10 max-w-2xl text-xl text-gray-400">
+				Share your constraints and we’ll propose a hardware and AI plan.
+			</p>
+			<a
+				href="/contact"
+				class="bg-accent text-bgColor hover:opacity-90 rounded-lg px-8 py-4 text-xl font-bold transition-opacity"
+			>
+				Start a project
+			</a>
+		</div>
+	</section>
 </PageLayout>
