@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
 	*/
 	title: "Tau Labs",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://tau-labs.ai/",
+	url: "https://tau-labs.info/",
 };
 
 // Used to generate links in both the Header & Footer.

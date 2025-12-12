@@ -47,35 +47,35 @@ import PageLayout from "@/layouts/Base.astro";
 
 			<div class="border-gray-800 overflow-hidden rounded-xl border bg-gray-900">
 				<div class="p-8 md:p-12">
-					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Robotics</div>
-					<h2 class="mb-6 text-3xl font-bold">Autonomous Inspection Drone</h2>
+					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Smart Home</div>
+					<h2 class="mb-6 text-3xl font-bold">Voice-Controlled Home Assistant</h2>
 					
 					<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 						<div>
 							<h3 class="mb-2 text-xl font-bold">Challenge</h3>
 							<p class="mb-6 text-gray-400">
-								An industrial inspection company needed a drone payload capable of real-time defect detection on wind turbines, without relying on ground control.
+								A smart home startup needed a low-cost, privacy-focused voice controller that could interface with existing appliances without relying on Big Tech ecosystems.
 							</p>
 							
 							<h3 class="mb-2 text-xl font-bold">Approach</h3>
 							<p class="mb-6 text-gray-400">
-								We developed a custom carrier board for the NVIDIA Jetson Orin Nano, integrating 4 high-res cameras and a thermal sensor. We optimized their YOLOv8 model to run at 60FPS on the edge.
+								We designed a custom ESP32-S3 board with a dual-mic array. We implemented a local wake-word engine that hands off complex queries to GPT-4o via a secure, encrypted websocket connection.
 							</p>
 						</div>
 						<div>
 							<h3 class="mb-2 text-xl font-bold">Outcome</h3>
 							<ul class="space-y-2 text-gray-400">
-								<li><span class="text-white font-bold">60 FPS</span> inference speed</li>
-								<li><span class="text-white font-bold">IP67</span> rated enclosure design</li>
-								<li><span class="text-white font-bold">50%</span> reduction in payload weight</li>
+								<li><span class="text-white font-bold">$15</span> BOM cost</li>
+								<li><span class="text-white font-bold">200ms</span> voice-to-text latency</li>
+								<li><span class="text-white font-bold">100%</span> local privacy for wake words</li>
 							</ul>
 							
 							<div class="mt-8">
 								<h3 class="mb-2 font-bold">Stack</h3>
 								<div class="flex flex-wrap gap-2">
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Jetson Orin Nano</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">TensorRT</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">YOLOv8</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">ESP32-S3</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">GPT-4o</span>
+									<span class="bg-gray-800 px-3 py-1 rounded text-sm">FreeRTOS</span>
 								</div>
 							</div>
 						</div>
