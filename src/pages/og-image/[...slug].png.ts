@@ -78,7 +78,7 @@ export async function GET(context: APIContext) {
 
 export async function getStaticPaths() {
 	const posts = await getAllPosts();
-	return posts
+	const paths = posts
 		.filter(({ data }) => !data.ogImage)
 		.map((post) => ({
 			params: { slug: post.id },
@@ -87,4 +87,14 @@ export async function getStaticPaths() {
 				title: post.data.title,
 			},
 		}));
+
+	paths.push({
+		params: { slug: "index" },
+		props: {
+			pubDate: new Date().toISOString(),
+			title: siteConfig.title,
+		},
+	});
+
+	return paths;
 }
