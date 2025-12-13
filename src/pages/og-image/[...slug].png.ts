@@ -91,7 +91,7 @@ export async function getStaticPaths() {
 	paths.push({
 		params: { slug: "index" },
 		props: {
-			pubDate: new Date().toISOString(),
+			pubDate: new Date(),
 			title: siteConfig.title,
 		},
 	});

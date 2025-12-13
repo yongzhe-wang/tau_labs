@@ -9,7 +9,7 @@ type Props = SiteMeta;
 const { articleDate, description, ogImage, title } = Astro.props;
 
 const titleSeparator = "•";
-const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
+const siteTitle = title === siteConfig.title ? title : `${title} ${titleSeparator} ${siteConfig.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(ogImage ? ogImage : "/og-image/index.png", Astro.url).href;
 ---
@@ -82,5 +82,17 @@ const socialImageURL = new URL(ogImage ? ogImage : "/og-image/index.png", Astro.
 		</>
 	)
 }
+
+{/* JSON-LD for Google Search Logo */}
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		url: siteConfig.url,
+		logo: new URL("/icon.svg", Astro.site).href,
+		name: siteConfig.title,
+	})}
+/>
 
 <meta content={Astro.generator} name="generator" />
