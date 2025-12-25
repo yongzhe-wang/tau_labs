@@ -4,80 +4,179 @@ import PageLayout from "@/layouts/Base.astro";
 
 <PageLayout meta={{ title: "Case Studies" }}>
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
-		<h1 class="mb-12 text-4xl font-bold">Case Studies</h1>
+		<h1 class="mb-4 text-4xl font-bold text-text-primary">Case Studies</h1>
+		<p class="mb-12 text-xl text-text-secondary leading-relaxed max-w-prose">
+			From "Nice Story" to "Decision Proof". Real numbers, real outcomes.
+		</p>
 		
 		<div class="space-y-12">
+			<!-- Case Study 1 -->
 			<div class="border-gray-800 overflow-hidden rounded-xl border bg-gray-900">
 				<div class="p-8 md:p-12">
 					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Toy</div>
-					<h2 class="mb-6 text-3xl font-bold">Voice-first educational toy</h2>
+					<h2 class="mb-8 text-3xl font-bold text-text-primary">Voice-first educational toy</h2>
 					
-					<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+						<!-- Customer Context -->
 						<div>
-							<h3 class="mb-2 text-xl font-bold">Challenge</h3>
-							<p class="mb-6 text-gray-400">
-								A leading kids brand needed a screen-free interactive toy that could tell stories and answer questions, with strict privacy requirements and long battery life.
-							</p>
-							
-							<h3 class="mb-2 text-xl font-bold">Approach</h3>
-							<p class="mb-6 text-gray-400">
-								We designed a custom PCB based on a low-power ARM SoC. We implemented a hybrid voice stack: local wake word and command recognition for privacy, with secure cloud offload for complex queries.
-							</p>
-						</div>
-						<div>
-							<h3 class="mb-2 text-xl font-bold">Outcome</h3>
-							<ul class="space-y-2 text-gray-400">
-								<li><span class="text-white font-bold">30ms</span> on-device response latency</li>
-								<li><span class="text-white font-bold">12+ hours</span> active battery life</li>
-								<li><span class="text-white font-bold">COPPA</span> compliant architecture</li>
-							</ul>
-							
-							<div class="mt-8">
-								<h3 class="mb-2 font-bold">Stack</h3>
-								<div class="flex flex-wrap gap-2">
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Cortex-A35</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Custom Linux</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">Whisper Tiny</span>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">Customer Context</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">Industry</dt>
+									<dd class="text-text-primary font-medium">Consumer Electronics / Toys</dd>
 								</div>
-							</div>
+								<div>
+									<dt class="text-text-tertiary">Target Volume</dt>
+									<dd class="text-text-primary font-medium">50k units / year</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Key Risk</dt>
+									<dd class="text-text-primary font-medium">Privacy (COPPA) & Battery Life</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Hard Constraints</dt>
+									<dd class="text-text-secondary mt-1">
+										<ul class="list-disc list-inside">
+											<li>Target BOM: &lt; $20</li>
+											<li>Latency: &lt; 1s</li>
+											<li>Battery: 10h+ active</li>
+											<li>Compliance: COPPA / GDPR-K</li>
+										</ul>
+									</dd>
+								</div>
+							</dl>
+						</div>
+
+						<!-- What Tau Labs Actually Built -->
+						<div>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">What Tau Labs Built</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">Board</dt>
+									<dd class="text-text-primary font-medium">Custom PCB w/ Low-power ARM SoC</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Stack</dt>
+									<dd class="text-text-primary font-medium">Hybrid Voice (Local Wake + Cloud Offload)</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Factory Changes</dt>
+									<dd class="text-text-primary font-medium">Implemented secure key injection station</dd>
+								</div>
+							</dl>
+						</div>
+
+						<!-- Outcome -->
+						<div>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">Outcome</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">BOM Cost</dt>
+									<dd class="text-accent font-bold text-lg">Reduced from $22 → $15</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">First-pass Yield</dt>
+									<dd class="text-text-primary font-bold">96%</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Latency</dt>
+									<dd class="text-text-primary font-bold">30ms (local)</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Battery Life</dt>
+									<dd class="text-text-primary font-bold">12+ hours active</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Time to Pilot</dt>
+									<dd class="text-text-primary font-bold">32 days</dd>
+								</div>
+							</dl>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<!-- Case Study 2 -->
 			<div class="border-gray-800 overflow-hidden rounded-xl border bg-gray-900">
 				<div class="p-8 md:p-12">
 					<div class="text-accent mb-4 text-sm font-bold tracking-wider uppercase">Smart Home</div>
-					<h2 class="mb-6 text-3xl font-bold">Voice-Controlled Home Assistant</h2>
+					<h2 class="mb-8 text-3xl font-bold text-text-primary">Voice-Controlled Home Assistant</h2>
 					
-					<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+						<!-- Customer Context -->
 						<div>
-							<h3 class="mb-2 text-xl font-bold">Challenge</h3>
-							<p class="mb-6 text-gray-400">
-								A smart home startup needed a low-cost, privacy-focused voice controller that could interface with existing appliances without relying on Big Tech ecosystems.
-							</p>
-							
-							<h3 class="mb-2 text-xl font-bold">Approach</h3>
-							<p class="mb-6 text-gray-400">
-								We designed a custom ESP32-S3 board with a dual-mic array. We implemented a local wake-word engine that hands off complex queries to GPT-4o via a secure, encrypted websocket connection.
-							</p>
-						</div>
-						<div>
-							<h3 class="mb-2 text-xl font-bold">Outcome</h3>
-							<ul class="space-y-2 text-gray-400">
-								<li><span class="text-white font-bold">$15</span> BOM cost</li>
-								<li><span class="text-white font-bold">200ms</span> voice-to-text latency</li>
-								<li><span class="text-white font-bold">100%</span> local privacy for wake words</li>
-							</ul>
-							
-							<div class="mt-8">
-								<h3 class="mb-2 font-bold">Stack</h3>
-								<div class="flex flex-wrap gap-2">
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">ESP32-S3</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">GPT-4o</span>
-									<span class="bg-gray-800 px-3 py-1 rounded text-sm">FreeRTOS</span>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">Customer Context</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">Industry</dt>
+									<dd class="text-text-primary font-medium">Smart Home / IoT</dd>
 								</div>
-							</div>
+								<div>
+									<dt class="text-text-tertiary">Target Volume</dt>
+									<dd class="text-text-primary font-medium">10k units (Initial Batch)</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Key Risk</dt>
+									<dd class="text-text-primary font-medium">Cost & Connectivity Reliability</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Hard Constraints</dt>
+									<dd class="text-text-secondary mt-1">
+										<ul class="list-disc list-inside">
+											<li>Target BOM: &lt; $18</li>
+											<li>Latency: &lt; 500ms</li>
+											<li>Battery: Mains powered (backup only)</li>
+											<li>Compliance: FCC / CE</li>
+										</ul>
+									</dd>
+								</div>
+							</dl>
+						</div>
+
+						<!-- What Tau Labs Actually Built -->
+						<div>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">What Tau Labs Built</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">Board</dt>
+									<dd class="text-text-primary font-medium">Custom ESP32-S3 w/ Dual-Mic Array</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Stack</dt>
+									<dd class="text-text-primary font-medium">Local Wake Word + GPT-4o via Websocket</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Factory Changes</dt>
+									<dd class="text-text-primary font-medium">Automated audio testing rig</dd>
+								</div>
+							</dl>
+						</div>
+
+						<!-- Outcome -->
+						<div>
+							<h3 class="mb-4 text-lg font-bold text-text-primary border-b border-gray-700 pb-2">Outcome</h3>
+							<dl class="space-y-4 text-sm">
+								<div>
+									<dt class="text-text-tertiary">BOM Cost</dt>
+									<dd class="text-accent font-bold text-lg">$15.00</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">First-pass Yield</dt>
+									<dd class="text-text-primary font-bold">98.5%</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Latency</dt>
+									<dd class="text-text-primary font-bold">200ms (voice-to-text)</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Privacy</dt>
+									<dd class="text-text-primary font-bold">100% Local Wake Word</dd>
+								</div>
+								<div>
+									<dt class="text-text-tertiary">Time to Pilot</dt>
+									<dd class="text-text-primary font-bold">45 days</dd>
+								</div>
+							</dl>
 						</div>
 					</div>
 				</div>

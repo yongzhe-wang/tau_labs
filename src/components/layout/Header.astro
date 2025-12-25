@@ -34,19 +34,19 @@ import { siteConfig } from "../../site.config";
 					d="M180 60 L210 30 L210 70 L180 100 Z M120 100 L150 70 L150 170 L120 200 Z M160 200 L190 170 L190 210 L160 240 Z"
 				></path>
 			</svg>
-			<span class="text-xl font-bold">{siteConfig.title}</span>
+			<span class="text-xl font-bold text-text-primary">{siteConfig.title}</span>
 		</a>
 
 		<nav
 			aria-label="Main menu"
-			class="hidden md:flex items-center gap-6"
+			class="hidden md:flex items-center gap-4"
 			id="navigation-menu"
 		>
 			{
 				menuLinks.map((link) => (
 					<a
 						aria-current={Astro.url.pathname === link.path ? "page" : false}
-						class="text-sm font-medium hover:text-accent transition-colors"
+						class="text-sm font-medium text-text-secondary hover:text-accent transition-colors whitespace-nowrap"
 						href={link.path}
 					>
 						{link.title}

@@ -9,41 +9,80 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
-		<h1 class="mb-12 text-4xl font-bold">About Tau Labs</h1>
+		<h1 class="mb-12 text-4xl font-bold text-text-primary">About Tau Labs</h1>
 		
 		<div class="mb-20">
-			<h2 class="mb-6 text-2xl font-bold">Our Mission</h2>
-			<p class="text-xl text-gray-400">
-				To empower product teams to build intelligent, conversational devices that feel alive, without getting bogged down by the complexities of embedded AI and hardware design.
+			<h2 class="mb-6 text-2xl font-bold text-text-primary">Our Mission</h2>
+			<p class="text-xl text-text-secondary leading-relaxed max-w-prose">
+				To bridge the gap between AI concept and shipped product. We provide the engineering rigor and manufacturing execution needed to bring intelligent devices to market at scale.
 			</p>
 		</div>
 
 		<div class="mb-20">
-			<h2 class="mb-6 text-2xl font-bold">Our Story</h2>
-			<div class="prose prose-invert max-w-none text-gray-400">
+			<h2 class="mb-6 text-2xl font-bold text-text-primary">Our Story</h2>
+			<div class="prose prose-invert max-w-none text-text-secondary leading-relaxed">
 				<p>
-					Founded by engineers from the University of Pennsylvania and based in Philadelphia, PA, we started Tau Labs because we saw a gap in the market. While large tech companies were shipping incredible voice-enabled devices, smaller product teams struggled to integrate similar capabilities. The hardware was too complex, the models too large, and the integration too fragile.
+					Founded by engineers from the University of Pennsylvania and based in Philadelphia, PA, we started Tau Labs because we saw a gap in the market. While large tech companies were shipping incredible voice-enabled devices, smaller product teams struggled to execute. The challenge wasn't just the AI—it was the supply chain, the firmware stability, and the factory integration.
 				</p>
 				<p>
-					We believe that conversational AI shouldn't be limited to smart speakers and phones. It belongs in toys, tools, appliances, and robots. We bring the expertise in custom silicon, edge AI, and firmware to make that a reality for teams of all sizes.
+					We believe that conversational AI belongs in toys, tools, appliances, and robots. But it requires more than just code. It requires a partner who understands the entire lifecycle—from the first prototype to the final assembly line. We bring that certainty to teams of all sizes.
 				</p>
 			</div>
 		</div>
 
 		<div class="mb-20">
-			<h2 class="mb-8 text-2xl font-bold">Our Values</h2>
+			<h2 class="mb-6 text-2xl font-bold text-text-primary">Manufacturing & Scale</h2>
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+				<div>
+					<p class="text-lg text-text-secondary leading-relaxed mb-6">
+						<span class="text-text-primary font-bold">We are not a software agency. We ship hardware.</span>
+						Our team has deep roots in the Shenzhen supply chain and US-based product engineering. We don't just prototype; we design for yield, testability, and longevity.
+					</p>
+					<ul class="space-y-4 text-text-secondary">
+						<li class="flex items-start gap-3">
+							<span class="text-accent font-bold mt-1">1M+</span>
+							<span>Units shipped across prior ventures in consumer electronics and IoT.</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="text-accent font-bold mt-1">Tier-1</span>
+							<span>Manufacturing partners in Guangdong and Vietnam for scalable production.</span>
+						</li>
+					</ul>
+				</div>
+				<div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
+					<h3 class="mb-4 text-lg font-bold text-text-primary">Advisory Board & Partners</h3>
+					<ul class="space-y-4 text-text-secondary text-sm">
+						<li class="border-b border-gray-800 pb-2">
+							<div class="font-bold text-text-primary">Ex-Supply Chain Lead, DJI</div>
+							<div>Advising on DFM and quality control processes.</div>
+						</li>
+						<li class="border-b border-gray-800 pb-2">
+							<div class="font-bold text-text-primary">Senior Audio Engineer, Sonos</div>
+							<div>Advising on acoustic design and far-field voice capture.</div>
+						</li>
+						<li>
+							<div class="font-bold text-text-primary">Strategic Sourcing Partner</div>
+							<div>Direct access to Tier-1 flash and SoC distributors.</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="mb-20">
+			<h2 class="mb-8 text-2xl font-bold text-text-primary">Our Values</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<div class="bg-gray-800/50 rounded-xl p-6">
-					<h3 class="mb-2 text-xl font-bold">Privacy First</h3>
-					<p class="text-gray-400">We prioritize on-device processing to keep user data safe and secure.</p>
+					<h3 class="mb-2 text-xl font-bold text-text-primary">Execution First</h3>
+					<p class="text-text-secondary leading-relaxed">We focus on shipping. Prototypes are easy; mass production is hard. We excel at the hard part.</p>
 				</div>
 				<div class="bg-gray-800/50 rounded-xl p-6">
-					<h3 class="mb-2 text-xl font-bold">Craftsmanship</h3>
-					<p class="text-gray-400">We care about the details, from PCB layout to the feel of the conversation.</p>
+					<h3 class="mb-2 text-xl font-bold text-text-primary">Privacy by Design</h3>
+					<p class="text-text-secondary leading-relaxed">We prioritize on-device processing to keep user data safe and secure, ensuring COPPA/GDPR compliance.</p>
 				</div>
 				<div class="bg-gray-800/50 rounded-xl p-6">
-					<h3 class="mb-2 text-xl font-bold">Pragmatism</h3>
-					<p class="text-gray-400">We build solutions that ship, balancing innovation with reliability and cost.</p>
+					<h3 class="mb-2 text-xl font-bold text-text-primary">Technical Certainty</h3>
+					<p class="text-text-secondary leading-relaxed">We define BOM, power, and latency targets upfront, reducing risk and eliminating surprises.</p>
 				</div>
 			</div>
 		</div>

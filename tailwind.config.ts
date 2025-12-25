@@ -4,6 +4,11 @@ export default {
 	plugins: [require("@tailwindcss/typography")],
 	theme: {
 		extend: {
+			colors: {
+				"text-primary": "var(--color-text-primary)",
+				"text-secondary": "var(--color-text-secondary)",
+				"text-tertiary": "var(--color-text-tertiary)",
+			},
 			typography: () => ({
 				DEFAULT: {
 					css: {

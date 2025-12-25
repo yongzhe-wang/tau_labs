@@ -8,23 +8,25 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
-    <h1 class="title mb-12">Services</h1>
-    <div class="prose prose-sm max-w-none">
-        <p>
-            We offer end-to-end services to help companies add conversational AI to their products.
-        </p>
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+        <h1 class="mb-12 text-4xl font-bold text-text-primary">Services</h1>
+        <div class="max-w-prose">
+            <p class="mb-8 text-xl text-text-secondary leading-relaxed">
+                We offer end-to-end services to help companies add conversational AI to their products.
+            </p>
 
-        <h3>Core services</h3>
-        <ul>
-            <li><strong>Hardware customization</strong> — board selection, thermal and enclosure design, and manufacturability consulting.</li>
-            <li><strong>Model optimization</strong> — quantization, pruning, and runtime tuning for low-latency inference.</li>
-            <li><strong>Edge deployment</strong> — containerized inference, on-device SDKs, and integration with local services.</li>
-            <li><strong>Data & privacy</strong> — secure pipelines, on-device data handling, and compliance guidance.</li>
-            <li><strong>Prototyping & support</strong> — rapid prototypes, pilot programs, and long-term maintenance.</li>
-        </ul>
+            <h3 class="mb-4 text-2xl font-bold text-text-primary">Core services</h3>
+            <ul class="mb-8 space-y-4 text-text-secondary leading-relaxed list-disc list-inside">
+                <li><strong class="text-text-primary">Hardware customization</strong> — board selection, thermal and enclosure design, and manufacturability consulting.</li>
+                <li><strong class="text-text-primary">Model optimization</strong> — quantization, pruning, and runtime tuning for low-latency inference.</li>
+                <li><strong class="text-text-primary">Edge deployment</strong> — containerized inference, on-device SDKs, and integration with local services.</li>
+                <li><strong class="text-text-primary">Data & privacy</strong> — secure pipelines, on-device data handling, and compliance guidance.</li>
+                <li><strong class="text-text-primary">Prototyping & support</strong> — rapid prototypes, pilot programs, and long-term maintenance.</li>
+            </ul>
 
-        <p>
-            Want a tailored quote? <a class="text-accent hover:underline" href="/contact/">Contact us</a> and we'll arrange a discovery workshop.
-        </p>
-    </div>
+            <p class="text-text-secondary leading-relaxed">
+                Want a tailored quote? <a class="text-accent hover:underline" href="/contact/">Contact us</a> and we'll arrange a discovery workshop.
+            </p>
+        </div>
+    </section>
 </PageLayout>

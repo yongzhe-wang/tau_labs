@@ -26,16 +26,16 @@ export const siteConfig: SiteConfig = {
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "Tau Labs AI",
+	title: "Tau Labs",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
 	url: "https://tau-labs.info/",
 };
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
-	{ path: "/", title: "Home" },
 	{ path: "/solutions/", title: "Solutions" },
 	{ path: "/technology/", title: "Technology" },
+	{ path: "/reference-modules/", title: "Reference Modules" },
 	{ path: "/case-studies/", title: "Case Studies" },
 	{ path: "/posts/", title: "Resources" },
 	{ path: "/about/", title: "About" },

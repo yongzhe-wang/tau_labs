@@ -4,48 +4,74 @@ import PageLayout from "@/layouts/Base.astro";
 
 <PageLayout meta={{ title: "Solutions" }}>
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
-		<h1 class="mb-6 text-4xl font-bold">Solutions for intelligent devices and conversational toys</h1>
-		<p class="mb-12 text-xl text-gray-400">
-			We provide end-to-end hardware and AI services to bring your product to life.
+		<h1 class="mb-6 text-4xl font-bold text-text-primary">Production-Ready Modules & Systems</h1>
+		<p class="mb-12 text-xl text-text-secondary leading-relaxed max-w-prose">
+			From silicon to shelf. We provide the validated modules, platforms, and manufacturing execution to ship intelligent products.
 		</p>
 
 		<div class="grid grid-cols-1 gap-12">
 			{[
 				{
-					title: "Custom AI Hardware Design",
-					desc: "We design carrier boards and compute modules tailored to your form factor and performance needs.",
-					deliverables: ["Schematics & PCB Layout", "Prototype Manufacturing", "Signal Integrity Analysis"],
+					title: "Conversational Device Platform",
+					whatItIs: "A production-ready voice system for toys and devices.",
+					sections: [
+						{ label: "Includes", items: ["Wake word + interrupt (local)", "Hybrid cloud dialogue", "OTA + device registry", "Companion API"] },
+						{ label: "Typical Use", items: ["Toys", "Desktop robots", "Voice accessories"] }
+					],
+					highlight: "Time to Pilot: 30 days"
 				},
 				{
-					title: "Conversational Toy Platform",
-					desc: "A turnkey solution for interactive toys, including voice activity detection, wake word, and dialogue management.",
-					deliverables: ["Voice Stack Integration", "Cloud/Edge Hybrid Architecture", "Companion App API"],
+					title: "Custom AI Compute Modules",
+					whatItIs: "Pre-validated compute and IO modules tailored to your form factor.",
+					sections: [
+						{ label: "Deliverables", items: ["Carrier board", "Power + thermal design", "Manufacturing files", "Test firmware"] }
+					],
+					whyItMatters: "Reduces board spins and factory failures."
 				},
 				{
-					title: "Model & Firmware Optimization",
-					desc: "Squeeze maximum performance out of low-power chips with quantization and runtime optimization.",
-					deliverables: ["INT8/FP16 Quantization", "Custom Kernel Implementation", "Power Profiling"],
-				},
-				{
-					title: "Prototype Kits & Dev Boards",
-					desc: "Get started quickly with our reference designs and development kits.",
-					deliverables: ["Tau-1 Dev Kit", "Documentation & SDK", "Support Channel"],
-				},
-				{
-					title: "Manufacturing & Supply Chain",
-					desc: "We handle production directly with our factory partners to ensure competitive pricing and quality control.",
-					deliverables: ["Sourcing & BOM Management", "Factory Liaison", "Quality Assurance (QA)"],
+					title: "Manufacturing & Scale Execution",
+					whatItIs: "We bridge the gap between prototype and mass production, managing the factory floor to ensure quality at scale.",
+					sections: [
+						{ label: "Capabilities", items: ["Pilot run support", "Flashing + QA workflow", "Yield tracking", "CM handoff"] }
+					],
+					whyItMatters: "We understand factories, ensuring high yield and reliable delivery."
 				},
 			].map((item) => (
 				<div class="border-gray-800 rounded-xl border bg-gray-900 p-8">
-					<h2 class="mb-4 text-2xl font-bold">{item.title}</h2>
-					<p class="mb-6 text-gray-400">{item.desc}</p>
-					<h3 class="mb-2 font-bold text-accent">Deliverables:</h3>
-					<ul class="list-disc list-inside text-gray-400">
-						{item.deliverables.map((d) => (
-							<li>{d}</li>
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+						<div>
+							<h2 class="text-2xl font-bold text-text-primary">{item.title}</h2>
+							<p class="mt-2 text-lg text-text-secondary leading-relaxed">{item.whatItIs}</p>
+						</div>
+						{item.highlight && (
+							<div class="bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap border border-accent/20">
+								{item.highlight}
+							</div>
+						)}
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{item.sections.map((section) => (
+							<div>
+								<h3 class="mb-3 font-bold text-accent uppercase tracking-wider text-sm">{section.label}</h3>
+								<ul class="space-y-2">
+									{section.items.map((d) => (
+										<li class="flex items-start text-text-tertiary">
+											<span class="mr-2 text-accent">•</span>
+											{d}
+										</li>
+									))}
+								</ul>
+							</div>
 						))}
-					</ul>
+						
+						{item.whyItMatters && (
+							<div class="md:col-span-2 bg-gray-800/50 rounded-lg p-4 mt-2 border border-gray-700/50">
+								<span class="text-accent font-bold mr-2">Why it matters:</span>
+								<span class="text-gray-300">{item.whyItMatters}</span>
+							</div>
+						)}
+					</div>
 				</div>
 			))}
 		</div>

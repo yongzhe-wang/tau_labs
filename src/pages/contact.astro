@@ -11,51 +11,128 @@ const meta = {
     <section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
         <div class="grid grid-cols-1 gap-20 lg:grid-cols-2">
             <div>
-                <h1 class="mb-6 text-4xl font-bold">Start a project</h1>
-                <p class="mb-12 text-xl text-gray-400">
+                <h1 class="mb-6 text-4xl font-bold text-text-primary">Start a project</h1>
+                <p class="mb-12 text-xl text-text-secondary leading-relaxed">
                     Tell us about your product vision and constraints. We'll help you navigate the hardware and AI landscape.
                 </p>
 
                 <div class="space-y-8">
+                    <!-- 
+                        NOTE: To make this form work, you need a free Access Key from Web3Forms.
+                        1. Go to https://web3forms.com/
+                        2. Enter your email (hello@tau-labs.info) to receive an Access Key.
+                        3. Replace "YOUR_ACCESS_KEY_HERE" below with your actual key.
+                    -->
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" id="contact-form">
+                        <input type="hidden" name="access_key" value="2dfc12e8-6474-4893-b698-1769fcb855f2">
+                        <input type="hidden" name="subject" value="New Project Inquiry from Tau Labs Website">
+                        <input type="hidden" name="from_name" value="Tau Labs Contact Form">
+                        
+                        <!-- Optional: Honeypot to prevent spam -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-text-primary">Your Email</label>
+                            <input type="email" name="email" id="email" class="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 text-text-primary shadow-sm focus:border-accent focus:ring-accent sm:text-sm p-2" placeholder="you@example.com" required />
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-text-primary">Project Details</label>
+                            <textarea name="message" id="message" rows="4" class="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 text-text-primary shadow-sm focus:border-accent focus:ring-accent sm:text-sm p-2" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        
+                        <div id="result" class="text-sm font-medium hidden"></div>
+
+                        <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-accent py-2 px-4 text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <script is:inline>
+                        const form = document.getElementById('contact-form');
+                        const result = document.getElementById('result');
+
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const formData = new FormData(form);
+                            const object = Object.fromEntries(formData);
+                            const json = JSON.stringify(object);
+
+                            result.innerHTML = "Sending...";
+                            result.classList.remove('hidden', 'text-red-500', 'text-green-500');
+                            result.classList.add('text-text-secondary');
+
+                            fetch('https://api.web3forms.com/submit', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json'
+                                },
+                                body: json
+                            })
+                            .then(async (response) => {
+                                let json = await response.json();
+                                if (response.status == 200) {
+                                    result.innerHTML = "Message sent successfully!";
+                                    result.classList.remove('text-text-secondary');
+                                    result.classList.add('text-green-500');
+                                    form.reset();
+                                } else {
+                                    console.log(response);
+                                    result.innerHTML = json.message;
+                                    result.classList.remove('text-text-secondary');
+                                    result.classList.add('text-red-500');
+                                }
+                            })
+                            .catch(error => {
+                                console.log(error);
+                                result.innerHTML = "Something went wrong!";
+                                result.classList.remove('text-text-secondary');
+                                result.classList.add('text-red-500');
+                            })
+                            .then(function() {
+                                form.reset();
+                                setTimeout(() => {
+                                    result.style.display = "none";
+                                }, 5000);
+                            });
+                        });
+                    </script>
+
                     <div>
-                        <h3 class="mb-2 text-lg font-bold">Email</h3>
-                        <a href="mailto:hello@tau-labs.info" class="text-accent hover:underline text-lg">hello@tau-labs.info</a>
-                    </div>
-                    <div>
-                        <h3 class="mb-2 text-lg font-bold">Location</h3>
-                        <p class="text-gray-400">Philadelphia, PA & Remote</p>
+                        <h3 class="mb-2 text-lg font-bold text-text-primary">Location</h3>
+                        <p class="text-text-secondary leading-relaxed">Philadelphia, PA & Remote</p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-gray-900 rounded-xl p-8 border border-gray-800">
-                <h2 class="mb-6 text-2xl font-bold">What happens next?</h2>
+                <h2 class="mb-6 text-2xl font-bold text-text-primary">What happens next?</h2>
                 <div class="space-y-6">
                     <div class="flex gap-4">
-                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">1</div>
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0 text-text-primary">1</div>
                         <div>
-                            <h3 class="font-bold mb-1">Initial Review</h3>
-                            <p class="text-sm text-gray-400">We review your requirements to ensure we're a good fit.</p>
+                            <h3 class="font-bold mb-1 text-text-primary">Initial Review</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed">We review your requirements to ensure we're a good fit.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">2</div>
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0 text-text-primary">2</div>
                         <div>
-                            <h3 class="font-bold mb-1">Discovery Call</h3>
-                            <p class="text-sm text-gray-400">A 30-minute chat to discuss technical constraints and goals.</p>
+                            <h3 class="font-bold mb-1 text-text-primary">Discovery Call</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed">A 30-minute chat to discuss technical constraints and goals.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">3</div>
+                        <div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0 text-text-primary">3</div>
                         <div>
-                            <h3 class="font-bold mb-1">Proposal</h3>
-                            <p class="text-sm text-gray-400">We send a preliminary architecture plan and engagement model.</p>
+                            <h3 class="font-bold mb-1 text-text-primary">Proposal</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed">We send a preliminary architecture plan and engagement model.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="mt-8 pt-8 border-t border-gray-800">
-                    <p class="text-sm text-gray-500">
+                    <p class="text-sm text-text-tertiary">
                         We respect your IP. All conversations are confidential. NDAs available upon request.
                     </p>
                 </div>

@@ -22,6 +22,11 @@
 		accent-color: var(--color-accent);
 		scrollbar-gutter: stable;
 
+		/* Default (Light Mode) Text Colors */
+		--color-text-primary: #1a1a1a;
+		--color-text-secondary: #4a4a4a;
+		--color-text-tertiary: #717171;
+
 		&[data-theme="light"] {
 			color-scheme: light;
 		}
@@ -34,6 +39,11 @@
 			--color-accent: oklch(70.91% 0.1415 163.7);
 			--color-accent-2: oklch(94.66% 0 0);
 			--color-quote: oklch(94.8% 0.106 136.49);
+
+			/* Dark Mode Text Colors (Tau Labs Design System) */
+			--color-text-primary: #E6E6E6;
+			--color-text-secondary: #B8BDC6;
+			--color-text-tertiary: #8A9099;
 		}
 	}
 

@@ -4,54 +4,107 @@ import PageLayout from "@/layouts/Base.astro";
 
 <PageLayout meta={{ title: "Technology" }}>
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
-		<h1 class="mb-6 text-4xl font-bold">Built on modern embedded AI stacks</h1>
-		<p class="mb-12 text-xl text-gray-400">
-			We select the right tools for the job, balancing performance, cost, and power.
+		<h1 class="mb-6 text-4xl font-bold text-text-primary">Built for the Real World</h1>
+		<p class="mb-12 text-xl text-text-secondary leading-relaxed max-w-prose">
+			We don't just pick chips. We solve the hard problems of shipping hardware.
 		</p>
 
-		<div class="space-y-20">
+		<div class="space-y-24">
+			<!-- Layer 1: What Problems We Solve -->
 			<section>
-				<h2 class="mb-8 text-3xl font-bold">On-device AI & Models</h2>
-				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Speech Processing</h3>
-						<p class="text-gray-400">Whisper, Kaldi, and custom wake word engines optimized for noisy environments.</p>
+				<h2 class="mb-12 text-3xl font-bold text-text-primary border-b border-gray-800 pb-4">1. Capabilities: What We Solve</h2>
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
+						<h3 class="mb-4 text-xl font-bold text-accent">Low-Power Voice</h3>
+						<p class="text-text-secondary leading-relaxed">
+							Always-listening wake words that don't drain the battery. We optimize for &lt;10mW standby power, enabling weeks of battery life for portable devices.
+						</p>
 					</div>
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Language Models</h3>
-						<p class="text-gray-400">Integration with GPT-4o, Claude 3.5, and Gemini 1.5 via secure, low-latency APIs.</p>
+					<div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
+						<h3 class="mb-4 text-xl font-bold text-accent">Privacy-First Interaction</h3>
+						<p class="text-text-secondary leading-relaxed">
+							Local processing for sensitive data. Wake words and basic commands run entirely on-device, ensuring no audio leaves the device until the user intends it.
+						</p>
 					</div>
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Computer Vision</h3>
-						<p class="text-gray-400">YOLO, MobileNet, and custom object detection models for real-time perception.</p>
+					<div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
+						<h3 class="mb-4 text-xl font-bold text-accent">Factory-Friendly Designs</h3>
+						<p class="text-text-secondary leading-relaxed">
+							Designed for mass production from day one. We include test points, automated testing rigs, and secure provisioning workflows to ensure high yield.
+						</p>
+					</div>
+					<div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
+						<h3 class="mb-4 text-xl font-bold text-accent">Long-Lived Devices</h3>
+						<p class="text-text-secondary leading-relaxed">
+							Built to last. Robust OTA update mechanisms, flash wear-leveling strategies, and component selection for long-term availability.
+						</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- Layer 2: How We Do It -->
 			<section>
-				<h2 class="mb-8 text-3xl font-bold">Hardware & Accelerators</h2>
-				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Espressif ESP32</h3>
-						<p class="text-gray-400">ESP32-S3 and C6 for efficient, connected AI applications.</p>
+				<h2 class="mb-12 text-3xl font-bold text-text-primary border-b border-gray-800 pb-4">2. Credibility: How We Do It</h2>
+				
+				<div class="space-y-12">
+					<div>
+						<h3 class="mb-6 text-2xl font-bold text-text-primary">Silicon & Compute</h3>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">Espressif ESP32</div>
+								<p class="text-sm text-text-secondary">ESP32-S3 for AI workloads, C6 for low-power connectivity.</p>
+							</div>
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">Nordic Semi</div>
+								<p class="text-sm text-text-secondary">nRF52/53 for ultra-low power Bluetooth LE applications.</p>
+							</div>
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">ARM Cortex</div>
+								<p class="text-sm text-text-secondary">Cortex-M for real-time control, Cortex-A for Linux gateways.</p>
+							</div>
+						</div>
 					</div>
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Qualcomm / NXP</h3>
-						<p class="text-gray-400">Power-efficient SoCs for consumer devices and wearables.</p>
-					</div>
-					<div class="bg-gray-800/50 rounded-xl p-6">
-						<h3 class="mb-4 text-xl font-bold">Microcontrollers</h3>
-						<p class="text-gray-400">Cortex-M and RISC-V MCUs for ultra-low-power keyword spotting.</p>
-					</div>
-				</div>
-			</section>
 
-			<section>
-				<h2 class="mb-8 text-3xl font-bold">Security & Privacy</h2>
-				<div class="bg-gray-800/50 rounded-xl p-8">
-					<p class="text-lg text-gray-300">
-						Security is paramount, especially for connected toys and voice devices. We implement secure boot, encrypted storage, and local processing to minimize data exposure. Our designs are COPPA and GDPR compliant by default.
-					</p>
+					<div>
+						<h3 class="mb-6 text-2xl font-bold text-text-primary">Models & AI</h3>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">Whisper & Kaldi</div>
+								<p class="text-sm text-text-secondary">Robust speech recognition optimized for embedded targets.</p>
+							</div>
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">YOLO & MobileNet</div>
+								<p class="text-sm text-text-secondary">Efficient object detection running at the edge.</p>
+							</div>
+							<div class="bg-gray-800/30 rounded-lg p-6">
+								<div class="font-bold text-text-primary mb-2">LLM APIs</div>
+								<p class="text-sm text-text-secondary">Secure integration with GPT-4o, Claude, and Gemini.</p>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<h3 class="mb-6 text-2xl font-bold text-text-primary">Security</h3>
+						<div class="bg-gray-800/30 rounded-lg p-6">
+							<ul class="grid grid-cols-1 gap-4 md:grid-cols-2 text-text-secondary">
+								<li class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+									Secure Boot & Flash Encryption
+								</li>
+								<li class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+									Mutual TLS (mTLS) for Cloud
+								</li>
+								<li class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+									Hardware Root of Trust
+								</li>
+								<li class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+									Encrypted Storage
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
